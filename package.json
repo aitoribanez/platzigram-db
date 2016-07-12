@@ -4,7 +4,8 @@
   "description": "Platzigram Database Client",
   "main": "index.js",
   "scripts": {
-    "lint": "standard"
+    "lint": "standard",
+    "test" : "npm run lint && ava"
   },
   "standard": {
     "parser": "babel-eslint"
@@ -12,6 +13,7 @@
   "author": "Aitor Ibañez <freelance@aitoribanez.com>",
   "license": "MIT",
   "devDependencies": {
+    "ava": "^0.15.2",
     "babel-eslint": "^6.1.2",
     "standard": "^7.1.2"
   }
