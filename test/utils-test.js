@@ -7,7 +7,7 @@ test('extracting hashtags from text', t => {
   let tags = utils.extractTags('a #picture with tags #AwEsOmE #Platzi #AVA and #100 ##yes')
 
   t.deepEqual(tags, [
-    'pictures',
+    'picture',
     'awesome',
     'platzi',
     'ava',

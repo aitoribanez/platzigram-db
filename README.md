@@ -2,3 +2,5 @@
 
 = Instalación =
 - npm install
+
+http://regexr.com/
