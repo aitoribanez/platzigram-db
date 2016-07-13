@@ -105,3 +105,19 @@ test('save user', async t => {
   t.is(typeof created.id, 'string')
   t.truthy(created.createdAt)
 })
+
+test('authenticate save', async t => {
+  let db = t.context.db
+
+  t.is(typeof db.authenticate, 'function', 'authenticateUser is function')
+
+  let user = fixtures.getUser()
+  let plainPassword = user.password
+  await db.saveUser(user)
+
+  let success = await db.authenticate(user.username, plainPassword)
+  t.true(success)
+
+  let fail = await db.authenticate(user.username, 'foo')
+  t.false(fail)
+})
